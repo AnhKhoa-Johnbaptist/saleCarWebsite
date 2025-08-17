@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liên hệ - Tinbanxe.vn</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #f60;
+      --dark: #222;
+      --gray: #f5f5f5;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      background: var(--gray);
+      color: var(--dark);
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #eee;
+    }
+
+    .container {
+      width: 95%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      color: var(--primary);
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    .user-actions a {
+      margin-left: 15px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow-x: auto;
+    }
+
+    nav li {
+      padding: 14px 18px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-section {
+      background: var(--white);
+      border-radius: 8px;
+      margin: 30px 0 25px 0;
+      padding: 28px 18px 22px 18px;
+      box-shadow: 0 2px 8px #0001;
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .contact-form {
+      flex: 1 1 350px;
+      min-width: 260px;
+      max-width: 500px;
+      margin-bottom: 18px;
+    }
+
+    .contact-form h2 {
+      color: var(--primary);
+      margin-bottom: 14px;
+      font-size: 1.35rem;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: #444;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #fafafa;
+    }
+
+    .form-group textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 9px 26px;
+      font-size: 1.05rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    .contact-form button:hover {
+      background: #d44b00;
+    }
+
+    .contact-info {
+      flex: 1 1 260px;
+      min-width: 220px;
+      background: #faf9f9;
+      border-radius: 8px;
+      padding: 22px 18px;
+      box-shadow: 0 1px 6px #0001;
+      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .contact-info h3 {
+      color: var(--primary);
+      font-size: 1.12rem;
+      font-weight: bold;
+      margin-bottom: 11px;
+    }
+
+    .contact-info .info-item {
+      margin-bottom: 10px;
+      color: #444;
+      font-size: 1rem;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .contact-info .info-item span {
+      font-weight: bold;
+      min-width: 72px;
+      display: inline-block;
+      color: #222;
+    }
+
+    .contact-info .info-item a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .contact-info .info-item a:hover {
+      text-decoration: underline;
+    }
+
+    .success-message {
+      background: #e4ffe8;
+      color: #118844;
+      border: 1px solid #b2f5c2;
+      border-radius: 5px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      font-weight: 500;
+      display: none;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 32px 0 18px 0;
+      margin-top: 35px;
+      font-size: 0.98rem;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 22px;
+      max-width: 1200px;
+      margin: 0 auto 16px auto;
+    }
+
+    .footer-col {
+      flex: 1 1 200px;
+      min-width: 180px;
+    }
+
+    .footer-title {
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 7px;
+    }
+
+    .footer-link {
+      color: #bbb;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .footer-link:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: #bbb;
+      margin-top: 20px;
+      font-size: 0.96rem;
+    }
+
+    @media (max-width: 900px) {
+      .contact-section {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .contact-form,
+      .contact-info {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+
+      .top-bar,
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container top-bar">
+      <a href="#" class="logo">run.vn</a>
+      <div class="user-actions">
+        <a href="profile.html">Profile</a>
+        <a href="login.html">Logout</a>
+      </div>
+    </div>
+    <nav>
+      <div class="container">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="contact-section">
+      <form class="contact-form" id="contactForm" autocomplete="off">
+        <h2>Liên hệ với Run.vn</h2>
+        <div class="success-message" id="successMessage">
+          Cảm ơn bạn đã gửi liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.
+        </div>
+        <div class="form-group">
+          <label for="name">Họ và tên <span style="color:#f60">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="Nhập họ tên...">
+        </div>
+        <div class="form-group">
+          <label for="email">Email <span style="color:#f60">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="Nhập email...">
+        </div>
+        <div class="form-group">
+          <label for="phone">Số điện thoại</label>
+          <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại...">
+        </div>
+        <div class="form-group">
+          <label for="message">Nội dung <span style="color:#f60">*</span></label>
+          <textarea id="message" name="message" required placeholder="Nội dung liên hệ..."></textarea>
+        </div>
+        <button type="submit">Gửi liên hệ</button>
+      </form>
+      <div class="contact-info">
+        <h3>Thông tin liên hệ</h3>
+        <div class="info-item">
+          <span>Địa chỉ:</span> 196/1/29 Cộng Hòa, P.12, Q. Tân Bình, TP HCM
+        </div>
+        <div class="info-item">
+          <span>Hotline:</span> <a href="tel:02866845555">028-6684-5555</a>
+        </div>
+        <div class="info-item">
+          <span>Email:</span> <a href="mailto:info@tinbanxe.vn">info@run.vn</a>
+        </div>
+        <div class="info-item">
+          <span>Website:</span> <a href="https://tinbanxe.vn" target="_blank">Run.vn</a>
+        </div>
+        <div class="info-item">
+          <span>Giấy phép:</span> 0314576203 (15/07/2017)
+        </div>
+        <div class="info-item">
+          <span>Chịu TN:</span> Mai Le Anh Khoa
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div class="footer-col">
+        <div class="footer-title">Run.vn</div>
+        <div>Cung cấp thông tin giá xe ô tô, xe tải, hỗ trợ so sánh và lựa chọn xe phù hợp.</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Liên hệ</div>
+        <div>
+          Địa chỉ: 196/1/29 Cộng Hòa, P.12, Q. Tân Bình, TP HCM<br>
+          Hotline: 028-6684-5555 <br>
+          Email: <a href="mailto:info@tinbanxe.vn" class="footer-link">info@run.vn</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Hỗ trợ</div>
+        <a href="#" class="footer-link">Giới thiệu</a>
+        <a href="#" class="footer-link">Liên hệ</a>
+        <a href="#" class="footer-link">Hướng dẫn</a>
+        <a href="#" class="footer-link">Chính sách bảo mật</a>
+        <a href="#" class="footer-link">Quy chế hoạt động</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Tinbanxe.vn | Ghi rõ nguồn "Run.vn" khi phát hành lại thông tin từ website này.
+    </div>
+  </footer>
+
+  <script>
+    // Demo: Show success message, reset form (no actual submission)
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('successMessage').style.display = 'block';
+      this.reset();
+      setTimeout(function () {
+        document.getElementById('successMessage').style.display = 'none';
+      }, 5000);
+    });
+  </script>
+</body>
+
+</html>

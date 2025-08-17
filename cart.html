@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Giỏ Hàng - Tinbanxe.vn</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f60;
+            --dark: #222;
+            --gray: #f5f5f5;
+            --white: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            background: var(--gray);
+            color: var(--dark);
+        }
+
+        header {
+            background: var(--white);
+            border-bottom: 1px solid #eee;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .user-actions a {
+            margin-left: 15px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow-x: auto;
+        }
+
+        nav li {
+            padding: 14px 18px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .cart-section {
+            background: var(--white);
+            border-radius: 8px;
+            margin: 30px 0;
+            padding: 28px;
+            box-shadow: 0 2px 8px #0001;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-details {
+            display: flex;
+            align-items: center;
+        }
+
+        .item-details img {
+            width: 80px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .item-details h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .item-price {
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .remove-item {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .remove-item:hover {
+            background: #d44b00;
+        }
+
+        .total-price {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .checkout-button {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+            display: block;
+            margin: 20px auto 0;
+            width: 200px;
+        }
+
+        .checkout-button:hover {
+            background: #d44b00;
+        }
+
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 32px 0 18px 0;
+            margin-top: 35px;
+            font-size: 0.98rem;
+        }
+
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 22px;
+            max-width: 1200px;
+            margin: 0 auto 16px auto;
+        }
+
+        .footer-col {
+            flex: 1 1 200px;
+            min-width: 180px;
+        }
+
+        .footer-title {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 7px;
+        }
+
+        .footer-link {
+            color: #bbb;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .footer-link:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #bbb;
+            margin-top: 20px;
+            font-size: 0.96rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container top-bar">
+            <a href="#" class="logo">run.vn</a>
+            <div class="user-actions">
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Logout</a>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="cart-section">
+            <h2>Giỏ hàng của bạn</h2>
+            <div class="cart-item">
+                <div class="item-details">
+                    <div>
+                        <h3 id="car-name"></h3>
+                        <div class="item-price">Giá: <span id="car-price"></span></div>
+                    </div>
+                </div>
+                <button class="remove-item">Xóa</button>
+            </div>
+
+            <div class="total-price"></div>
+            <button class="checkout-button">Thanh toán</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-row">
+            <div class="footer-col">
+                <div class="footer-title">Run.vn</div>
+                <div>Cung cấp thông tin giá xe ô tô, xe tải, hỗ trợ so sánh và lựa chọn xe phù hợp.</div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Liên hệ</div>
+                <div>
+                    Địa chỉ: 196/1/29 Cộng Hòa, P.12, Q. Tân Bình, TP HCM<br>
+                    Hotline: 028-6684-5555 <br>
+                    Email: <a href="mailto:info@tinbanxe.vn" class="footer-link">info@run.vn</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Hỗ trợ</div>
+                <a href="#" class="footer-link">Giới thiệu</a>
+                <a href="#" class="footer-link">Liên hệ</a>
+                <a href="#" class="footer-link">Hướng dẫn</a>
+                <a href="#" class="footer-link">Chính sách bảo mật</a>
+                <a href="#" class="footer-link">Quy chế hoạt động</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Tinbanxe.vn | Ghi rõ nguồn "Run.vn" khi phát hành lại thông tin từ website này.
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carName = localStorage.getItem('carName');
+            const carPrice = localStorage.getItem('carPrice');
+            document.getElementById('car-name').textContent = carName;
+            document.getElementById('car-price').textContent = carPrice;
+            localStorage.removeItem('carName');
+            localStorage.removeItem('carPrice');
+        });
+    </script>
+</body>
+
+</html>
